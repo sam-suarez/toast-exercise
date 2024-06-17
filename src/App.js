@@ -1,16 +1,14 @@
-import React from 'react';
-import Container from '@mui/material/Container';
-
-import Header from './Header';
-import Content from './Content';
+import React from "react";
+import Header from "./Header";
+import Content from "./Content";
 
 function App() {
   return (
     <>
       <Header />
-      <Container>
+      <main className="px-6">
         <Content />
-      </Container>
+      </main>
     </>
   );
 }
