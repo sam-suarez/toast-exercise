@@ -1,41 +1,20 @@
-import React from 'react';
+import React from "react";
+import { createMockFormSubmission } from "./service/mockServer";
 
-import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-
-import { createMockFormSubmission } from './service/mockServer';
-
-export default function Header() {
+const Header = () => {
   return (
-    <Box sx={{flexGrow: 1}}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{marginRight: 2}}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" sx={{flexGrow: 1}}>
-            Toast Exercise
-          </Typography>
-          <Button
-            variant="contained"
-            size="small"
-            color="secondary"
-            onClick={() => createMockFormSubmission()}
-          >
-            New Submission
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <header className="px-6 py-4 bg-indigo-700">
+      <div className="max-w-screen-lg	mx-auto flex items-center justify-between">
+        <h2 className="text-2xl text-white">Toast Exercise</h2>
+        <button
+          className="py-2 px-4 bg-white text-indigo-700 rounded text-sm"
+          onClick={() => createMockFormSubmission()}
+        >
+          NEW SUBMISSION
+        </button>
+      </div>
+    </header>
   );
-}
+};
+
+export default Header;
