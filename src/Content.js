@@ -1,15 +1,23 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import React, { useState } from "react";
+import Toast from "./Toast";
+import Submissions from "./Submissions";
 
-export default function Content() {
+const Content = () => {
+  // Declare state to parent to be accessible by both children Submissions and Toast
+  const [likedSubmissions, setLikedSubmissions] = useState([]);
+
   return (
-    <Box sx={{marginTop: 3}}>
-      <Typography variant="h4">Liked Form Submissions</Typography>
-
-      <Typography variant="body1" sx={{fontStyle: 'italic', marginTop: 1}}>
-        TODO: List of liked submissions here (delete this line)
-      </Typography>
-    </Box>
+    <div className="max-w-screen-lg	mx-auto py-6">
+      <h1 className="text-2xl">Liked Form Submissions</h1>
+      <div className="mt-4">
+        <Submissions
+          likedSubmissions={likedSubmissions}
+          setLikedSubmissions={setLikedSubmissions}
+        />
+      </div>
+      <Toast setLikedSubmissions={setLikedSubmissions} />
+    </div>
   );
-}
+};
+
+export default Content;
